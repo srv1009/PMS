@@ -23,6 +23,7 @@ public class OtpServiceImpl {
 			SimpleMailMessage mail = new SimpleMailMessage();
 			mail.setTo(user.getEmail());
 			mail.setFrom("topthings81@gmail.com");
+			mail.setCc("saurav.agarwala17@gmail.com");
 			mail.setSubject("Hey, i have nothing else to do.");
 			mail.setText("OTP : 123456");
 			jms.send(mail);
