@@ -3,6 +3,7 @@ package com.pms.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pms.dao.LoginDAO;
 import com.pms.model.User;
 import com.pms.model.UserAuth;
 import com.pms.service.UserService;
@@ -12,6 +13,8 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private OtpServiceImpl otpService;
+	@Autowired
+	private LoginDAO loginDAO;
 	@Override
 	public boolean validateUser(User user) {
 		// TODO Auto-generated method stub
@@ -21,7 +24,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public String attemptRegisterUser(User user) {
 		// register
-		otpService.sendMail(user);
+		loginDAO.validateUser(user);
 		return null;
 	}
 

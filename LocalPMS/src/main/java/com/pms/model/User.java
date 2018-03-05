@@ -1,9 +1,20 @@
 package com.pms.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="user")
 public class User {
 
+	@Column(name = "userName")
 	private String userName;
+	@Column(name = "password")
 	private String password;
+	@Id
+	@Column(name = "email")
 	private String email;
 	public String getUserName() {
 		return userName;

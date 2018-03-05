@@ -18,7 +18,7 @@ public class RegisterController {
 		User user = new User();
 		user.setUserName("unk");
 		user.setPassword("1111");
-		user.setEmail("saurabh.srivastav37@gmail.com");
+		user.setEmail("deyavirup@gmail.com");
 		userService.attemptRegisterUser(user);
 		return "hi from register";
 	}
